@@ -2,11 +2,12 @@
 {
     public class Aluno
     {
-        public int Matricula;
-        public string Nome;
-        public string Sobrenome;
-        public string Telefone;
+        public int Matricula { get; set; }
+        public string Nome { get; set; }
+        public string Sobrenome { get; set; }
+        public string Telefone { get; set; }
         public int[] Notas = new int[4];
+        
 
 
         public void RegistrarNota(int bimestre, int notas)
@@ -14,7 +15,7 @@
             this.Notas[bimestre] = notas;
         }
 
-        void ApresentarNotas()
+        public void ApresentarNotas()
         {
             for(int i = 0; i < Notas.Length; i++)
             {
@@ -22,7 +23,8 @@
             }   
         }
 
-        int MediaDasNotas()
+
+        public int MediaDasNotas()
         {
             int media=0;
             foreach(int nota in Notas)
@@ -32,15 +34,15 @@
             return media = media / 4;
         }
 
-        public void Estagio()
+        public bool Estagio()
         {
             if(MediaDasNotas() < 6)
             {
-                Console.WriteLine("Reprovado");
+                return false;
             }
             else
             {
-                Console.WriteLine("Aprovado");
+                return true;
             }
         }
     }

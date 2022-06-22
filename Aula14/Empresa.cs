@@ -9,16 +9,30 @@ namespace Aula14
     public class Empresa : Administracao
     {
         static public Dictionary<string, Funcionario> Contratados = new Dictionary<string, Funcionario>();
+
+        public override string Id { get => "Funcionário"; set => throw new NotImplementedException(); }
+
+        public void SetFuncionario(Funcionario funcionario)
+        {
+            funcionario.CPF = Console.ReadLine();
+            funcionario.Nome = Console.ReadLine();
+            funcionario.Sobrenome = Console.ReadLine();
+            funcionario.Telefone = Console.ReadLine();
+        }
+
+        public override void MensagemCadrasto()
+        {
+            Console.WriteLine($"Digite as informaçoes do {Id},cpf, nome, sobrenome e " +
+                $"telefone respectivamente ");
+            
+        }
         public override void Cadastrar()
         {
             Funcionario funcionario = new Funcionario();
-            string nome = "";
-            string sobrenome = "";
-            string telefone = "";
-            string cpf = "";
-            double salario = 0;
-
-            Contratados.TryAdd(cpf, funcionario);
+            MensagemCadrasto();
+            SetFuncionario(funcionario);
+            
+            Contratados.TryAdd(funcionario.CPF, funcionario);
 
         }
 

@@ -8,10 +8,11 @@ namespace Aula14
 {
     public class Funcionario
     {
-        public string Nome;
-        public string Sobrenome;
-        public string Telefone;
-        public string CPF;
-        public double Salario;
+        public string Nome { get ; set; }    
+        public string Sobrenome { get; set; }
+        public string Telefone { get; set; }
+        public string CPF { get; set; }
+        public double Salario { get; set; }
+        public bool Status { get; set; }
     }
 }
