@@ -16,7 +16,6 @@ namespace Aula14
             string nome ="";
             string sobrenome = "";
             string telefone = "";
-            aluno.AtualizarCadastro(nome,sobrenome,telefone);
             aluno.Matricula = Matriculados.Count + 1;
             Matriculados.TryAdd(aluno.Matricula, aluno);
             Console.WriteLine("Aluno cadastrado" + Environment.NewLine);

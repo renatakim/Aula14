@@ -9,13 +9,6 @@
         public int[] Notas = new int[4];
 
 
-        public void AtualizarCadastro(string nome, string sobrenome, string telefone)
-        {
-            Nome = nome;
-            Sobrenome = sobrenome;
-            Telefone = telefone;    
-        }
-
         public void RegistrarNota(int bimestre, int notas)
         {
             this.Notas[bimestre] = notas;
